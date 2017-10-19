@@ -4,11 +4,11 @@ $(document).ready(function(){
   let bike = new BikeApp();
 
   $(document).ajaxStart(function(){
-       $("#wait").css("display", "block");
+     $("#wait").css("display", "block");
    });
    $(document).ajaxComplete(function(){
-       $("#wait").css("display", "none");
-       $(".results").show();
+     $("#wait").css("display", "none");
+     $(".results").show();
    });
 
   $(".location").submit(function(e){
