@@ -5,24 +5,31 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <meta charset="utf-8">
-    <title>Bike app</title>
+    <title>Bike Finder</title>
   </head>
   <body>
+    <div class="jumbotron">
+      <h1>Bike <img src="img/bike.png" alt="bike"> Finder</h1>
+    </div>
     <div class="container">
       <div class="errors">
-
       </div>
       <form class="location">
         <div class="form-group">
-          <input type="text" class="form-control location" placeholder="i.e. Philadelphia,PA" required>
-          <input type="number" class="form-control amount" placeholder="i.e. 50" step="1" min="1" required>
+          <h3>Enter a location to find all recorded bikes stolen within 10 miles of your entry:</h3>
+          <input type="text" class="form-control location" placeholder="'210 NW 11th Ave, Portland, OR', '60647', 'Chicago, IL', or '45.521728,-122.67326'" required>
+          <h3>Enter how many bikes results you'd like to view:</h3>
+          <input type="number" class="form-control amount" placeholder="e.g. 10" step="1" min="1" required>
           <button type="submit" class="btn">Search</button>
         </div>
       </form>
-      <div class="results hide">
-        <ul id="stolenBikes">
-
-        </ul>
+      <div class="loader"></div>
+      <div class="results">
+        <h4 class="col-md-offset-5 col-md-4">Bikes:</h4>
+        <div class="col-md-offset-4 col-md-4">
+          <ul id="stolenBikes">
+          </ul>
+        </div>
       </div>
     </div>
   </body>

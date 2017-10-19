@@ -4,6 +4,7 @@ function convertDate(date){
   return convertedDate;
 }
 
+
 export class BikeApp {
   constructor(){
   }
@@ -13,7 +14,7 @@ export class BikeApp {
     .then(function(response){
       let bikes = response.bikes;
       bikes.forEach(function(bike){
-        $('#stolenBikes').append(`<li><span class="line-header">Bike Model:</span> ${bike.title}<br><span class="line-header">Date Stolen:</span>  ${convertDate(bike.date_stolen)}</div></li>`);
+        $('#stolenBikes').append(`<li><span class="line-header">Bike Model:</span> ${bike.title}<br><span class="line-header">Date Stolen:</span>  ${convertDate(bike.date_stolen)}</div></li><br>`);
       });
     }).fail(function(error){
       $('.errors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
