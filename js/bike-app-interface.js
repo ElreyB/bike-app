@@ -5,7 +5,8 @@ $(document).ready(function(){
   $(".location").submit(function(e){
     e.preventDefault();
     const userLocation = $("input.location").val();
+    const userAmount = $("input.amount").val();
     $(".results").removeClass("hide");
-    bike.byLocation(userLocation);
+    bike.byLocation(userLocation, userAmount);
     });
 });

@@ -8,12 +8,12 @@ export class BikeApp {
   constructor(){
   }
 
-  byLocation(location){
-    $.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=50&location=${location}&distance=10&stolenness=proximity`)
+  byLocation(location, amount){
+    $.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=${amount}&location=${location}&distance=10&stolenness=proximity`)
     .then(function(response){
       let bikes = response.bikes;
       bikes.forEach(function(bike){
-        $('#stolenBikes').append(`<li>${bike.title} : ${convertDate(bike.date_stolen)}</li>`);
+        $('#stolenBikes').append(`<li><span class="line-header">Bike Model:</span> ${bike.title}<br><span class="line-header">Date Stolen:</span>  ${convertDate(bike.date_stolen)}</li>`);
       });
     }).fail(function(error){
       $('.errors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
