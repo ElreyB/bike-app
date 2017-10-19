@@ -4,6 +4,7 @@
 
 .jumbotron {
   text-align: center;
+  background-color: #adcdd1;
 }
 
 .btn {
@@ -20,4 +21,8 @@ ul {
 
 .line-header {
   font-weight: bold;
+}
+
+body {
+  background-color: #f2f2f2;
 }

@@ -15,7 +15,6 @@ $(document).ready(function(){
     e.preventDefault();
     $(".results").hide();
     $("ul#stolenBikes").empty();
-
     const userLocation = $("input.location").val();
     const userAmount = $("input.amount").val();
     bike.byLocation(userLocation, userAmount);
